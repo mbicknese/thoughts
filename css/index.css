@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
 /* Colors */
 :root {
   --lightgray: #e0e0e0;
@@ -17,7 +18,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, system-ui, sans-serif;
+  font-family: 'Atkinson Hyperlegible', -apple-system, system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
 }
@@ -39,7 +40,11 @@ a[href] {
 a[href]:visited {
   color: var(--navy);
 }
-main {
+header, main, footer {
+  max-width: 37.5em;
+  margin: 0 auto;
+}
+main, footer {
   padding: 1rem;
 }
 main :first-child {
