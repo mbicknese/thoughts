@@ -43,4 +43,4 @@ Maybe it's because I'm not so bright. Perhaps it's because I switched projects t
     </script>
 ```
 
-And everything is well in Maarten land. See [this commit](https://github.com/mbicknese/[magic]) for this post's changes.
+And everything is well in Maarten land. See [this commit](https://github.com/mbicknese/thoughts/commit/48758ce24ac60fd5d6bc2644c0603525f95b99bf) for this post's changes.
