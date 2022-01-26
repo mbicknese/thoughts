@@ -24,12 +24,12 @@ There's probably a resource from Twitter itself on linking to tweets.
 Scrap that. We want it the other way around. This time Google for "How to create a share on Twitter link" (which should direct you to the [Twitter docs](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview)). I went with plain HTML, no logic or styling.
 
 ```html
-    <a 
-      rel="external" 
-      href="https://twitter.com/intent/tweet?text=I%20just%20read%20%40MaartenBicknese%27s%20blog"
-    >
-        let me know what you think!
-    </a>
+<a 
+  rel="external" 
+  href="https://twitter.com/intent/tweet?text=I%20just%20read%20%40MaartenBicknese%27s%20blog"
+>
+    let me know what you think!
+</a>
 ```
 I took the code provided and added the `rel` attribute because that's good for SEO. Right? And using an online [URL Encoder](https://www.urlencoder.org) to set the text to "I just read @MaartenBicknese's blog." That text isn't as cool as it can be. Maybe we can improve on it by linking to the current post. Time to dive into the [11ty docs](https://www.11ty.dev/docs/). I clicked through the docs for a little but seeing I'm not into 11ty I had no clue what I was looking at. So time to fall back to the basics, `location.href` to the rescue. Oh right, Nunjucks doesn't support executing JavaScript straight away.
 
@@ -38,9 +38,9 @@ Screw this, google "11ty link to current page". Oh cool ah 'page' variable. Oh d
 Maybe it's because I'm not so bright. Perhaps it's because I switched projects too often. But trying to get dynamic variables injected in a static context will not work. Time for manual JavaScript. I added the `twitter-cta` id to the link and the following JS one-liner.
 
 ```javascript
-    <script>
-        window['twitter-cta'].href += encodeURIComponent(location.href);
-    </script>
+<script>
+    window['twitter-cta'].href += encodeURIComponent(location.href);
+</script>
 ```
 
 And everything is well in Maarten land. See [this commit](https://github.com/mbicknese/thoughts/commit/48758ce24ac60fd5d6bc2644c0603525f95b99bf) for this post's changes.

@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
-/* Colors */
-:root {
-  --lightgray: #e0e0e0;
-  --gray: #C0C0C0;
-  --darkgray: #333;
-  --navy: #17050F;
-  --blue: #082840;
-  --white: #fff;
-}
+@import url("https://unpkg.com/open-props/colors.min.css");
 
 /* Global stylesheet */
 * {
@@ -19,8 +11,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Atkinson Hyperlegible', -apple-system, system-ui, sans-serif;
-  color: var(--darkgray);
-  background-color: var(--white);
+  color: var(--gray-8);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 40px);
 }
 p:last-child {
   margin-bottom: 0;
@@ -35,10 +30,10 @@ p,
   line-height: 1.45;
 }
 a[href] {
-  color: var(--blue);
+  color: var(--indigo-4);
 }
 a[href]:visited {
-  color: var(--navy);
+  color: var(--indigo-9);
 }
 header, main, footer {
   max-width: 37.5em;
@@ -51,12 +46,15 @@ main :first-child {
   margin-top: 0;
 }
 header {
-  border-bottom: 1px dashed var(--lightgray);
+  border-bottom: 1px dashed var(--gray-4);
 }
 header:after {
   content: "";
   display: table;
   clear: both;
+}
+footer {
+  margin-top: auto;
 }
 table {
   margin: 1em 0;
@@ -93,6 +91,14 @@ pre {
 code {
   word-break: break-all;
 }
+
+blockquote {
+  margin-left: 0;
+  padding-left: 2rem;
+  border-left: 2px solid var(--orange-3);
+  color: var(--gray-6);
+}
+
 .highlight-line {
   display: block;
   padding: 0.125em 1em;
@@ -176,7 +182,7 @@ code {
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
-  color: var(--darkgray);
+  color: var(--gray-9);
 }
 .postlist-date {
   word-spacing: -0.5px;
@@ -208,8 +214,8 @@ code {
   margin-left: 0.6666666666667em; /* 8px /12 */
   margin-top: 0.5em; /* 6px /12 */
   margin-bottom: 0.5em; /* 6px /12 */
-  color: var(--darkgray);
-  border: 1px solid var(--gray);
+  color: var(--gray-9);
+  border: 1px solid var(--gray-6);
   border-radius: 0.25em; /* 3px /12 */
   text-decoration: none;
   line-height: 1.8;
@@ -220,7 +226,7 @@ a[href].post-tag:visited {
 }
 a[href].post-tag:hover,
 a[href].post-tag:focus {
-  background-color: var(--lightgray);
+  background-color: var(--gray-4);
 }
 .postlist-item > .post-tag {
   align-self: center;

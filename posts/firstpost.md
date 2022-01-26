@@ -19,10 +19,10 @@ Now all that's left to do, is to get this site actually op on running on my fami
 
 p.s. I lied. I couldn't help but center the content. Initially, I set the width to `768px`, but the `p` elements already had a max-width. It made more sense to match these sizes.
 ```css
-  header, main, footer {
-    max-width: 37.5em;
-    margin: 0 auto;
-  }
+header, main, footer {
+  max-width: 37.5em;
+  margin: 0 auto;
+}
 ```
 
 ## post mortem
@@ -34,7 +34,7 @@ Luckily there's good ol' FTP, and dinosaurs like me have FTP skills. Yet, the FT
 Next up, plain old FTP in the terminal. Fun story, it isn't installed on Mac by default, but only a single command away to get it installed.
 
 ```bash
-  brew install inetutils
+brew install inetutils
 ```
 
 (if you don't have so already, please get yourself [Homebrew](https://brew.sh))
@@ -46,9 +46,9 @@ I forgot to change the title; the word "Archive" preached high above my nice pos
 `ncftp` doesn't offer an option to fully remove a directory with all its subdirectories. I could have looked for another, dare I say better, tool. But the web-interface served me well this time. Remake the directory and upload the site.
 
 ```bash
-  mkdir thoughts
-  cd thoughts # don't forget this step, you'll upload everything in the wrong dir
-  mput -r *
+mkdir thoughts
+cd thoughts # don't forget this step, you'll upload everything in the wrong dir
+mput -r *
 ```
 
 (free pro tip: use `ctrl + d` to quit about any CLI tool).
